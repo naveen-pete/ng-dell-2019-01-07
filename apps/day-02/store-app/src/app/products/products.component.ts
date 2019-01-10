@@ -1,12 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Product } from '../models/product';
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  productName = 'Dell XPS';
+  product: Product = {
+    id: 1,
+    name: 'Dell Latitude',
+    description: 'This laptop is good for business purpose',
+    price: 60000,
+    isAvailable: false
+  };
 
   constructor() { }
 

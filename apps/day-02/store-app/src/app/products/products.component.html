@@ -1,23 +1,18 @@
-<h3>Products Component</h3>
-
-<div>
-  Product Name: {{ productName }}
+<div class="card bg-light m-3">
+  <h4 class="card-header">{{ product.name | uppercase }}</h4>
+  <div class="card-body">
+    <p class="card-text" [ngStyle]="{ color: product.isAvailable ? 'blue' : 'orange' }">{{ product.description }}</p>
+    <p class="card-text"><strong>Price:</strong> <em>{{ product.price | currency : 'INR' : false }}</em></p>
+    <p class="card-text"><strong>Available?</strong>
+      <em class="badge"
+        [ngClass]="product.isAvailable ? 'badge-success' : 'badge-danger'">
+        {{ product.isAvailable ? 'Yes' : 'No' }}
+      </em>
+    </p>
+  </div>
+  <div class="card-footer">
+    <button type="button" class="btn btn-warning btn-sm">
+      Delete
+    </button>
+  </div>
 </div>
-
-<div>
-  <input type="text"
-    class="form-control"
-    [(ngModel)]="productName"
-    (input)="onNameChange($event)">
-</div>
-
-<div>
-  <button class="btn btn-primary" (click)="onSave()">Save</button>
-</div>
-
-<br>
-
-<div>
-  {{ productName }} is used for business use.
-</div>
-
