@@ -8,8 +8,6 @@ import { Product } from '../models/product';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  showMessage = false;
-
   products: Product[] = [
     {
       id: 1,
@@ -34,31 +32,12 @@ export class ProductsComponent implements OnInit {
     },
   ];
 
-  product: Product = new Product();
-
   constructor() { }
 
   ngOnInit() { }
 
-  onSubmit() {
-    console.log('Form submitted.');
-    this.products.unshift(this.product);
-    this.product = new Product();
-    this.showMessage = true;
-
-    // const obj = this;
-    // setTimeout(function() {
-    //   console.log('this:', obj);
-    //   obj.showMessage = false;
-    //   console.log('Timeout callback called. showMessage property reset to false.');
-    // }, 4000);
-
-    setTimeout(() => {
-      console.log('this:', this);
-      this.showMessage = false;
-      console.log('Timeout callback called. showMessage property reset to false.');
-    }, 4000);
-
+  onProductCreated(product: Product) {
+    this.products.unshift(product);
+    console.log('productCreated event handled.');
   }
-
 }
