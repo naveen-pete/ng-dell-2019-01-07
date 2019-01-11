@@ -21,3 +21,6 @@ GitHub: https://github.com/t-palmer/example-ng6-lib
 
 Global Error Handling with Angular2+
 - https://medium.com/@amcdnl/global-error-handling-with-angular2-6b992bdfb59c
+
+Git Setup
+- https://git-scm.com/downloads

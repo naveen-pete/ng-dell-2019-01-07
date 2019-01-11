@@ -8,25 +8,57 @@ import { Product } from '../models/product';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  product: Product = {
-    id: 1,
-    name: 'Dell Latitude',
-    description: 'This laptop is good for business purpose',
-    price: 60000,
-    isAvailable: false
-  };
+  showMessage = false;
+
+  products: Product[] = [
+    {
+      id: 1,
+      name: 'Dell Latitude',
+      price: 50000,
+      description: 'A laptop for daily use',
+      isAvailable: true
+    },
+    {
+      id: 2,
+      name: 'Dell Inspiron',
+      price: 40000,
+      description: 'A laptop for business use',
+      isAvailable: true
+    },
+    {
+      id: 3,
+      name: 'Dell XPS',
+      price: 70000,
+      description: 'A laptop for gaming',
+      isAvailable: false
+    },
+  ];
+
+  product: Product = new Product();
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  onSubmit() {
+    console.log('Form submitted.');
+    this.products.unshift(this.product);
+    this.product = new Product();
+    this.showMessage = true;
+
+    // const obj = this;
+    // setTimeout(function() {
+    //   console.log('this:', obj);
+    //   obj.showMessage = false;
+    //   console.log('Timeout callback called. showMessage property reset to false.');
+    // }, 4000);
+
+    setTimeout(() => {
+      console.log('this:', this);
+      this.showMessage = false;
+      console.log('Timeout callback called. showMessage property reset to false.');
+    }, 4000);
+
   }
 
-  onSave() {
-    console.log('Save button clicked');
-  }
-
-  onNameChange(e) {
-    console.log(e.target.value);
-    console.log('Product name changed event');
-  }
 }
