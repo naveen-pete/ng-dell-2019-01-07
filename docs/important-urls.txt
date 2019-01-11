@@ -24,3 +24,6 @@ Global Error Handling with Angular2+
 
 Git Setup
 - https://git-scm.com/downloads
+
+Angular 2 / 4 / 5 not working in IE11
+- https://stackoverflow.com/questions/35140718/angular-2-4-5-not-working-in-ie11
