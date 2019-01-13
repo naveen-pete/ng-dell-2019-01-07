@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Product } from '../models/product';
+import { LoggerService } from '../services/logger.service';
+import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'app-products',
@@ -8,36 +10,14 @@ import { Product } from '../models/product';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  products: Product[] = [
-    {
-      id: 1,
-      name: 'Dell Latitude',
-      price: 50000,
-      description: 'A laptop for daily use',
-      isAvailable: true
-    },
-    {
-      id: 2,
-      name: 'Dell Inspiron',
-      price: 40000,
-      description: 'A laptop for business use',
-      isAvailable: true
-    },
-    {
-      id: 3,
-      name: 'Dell XPS',
-      price: 70000,
-      description: 'A laptop for gaming',
-      isAvailable: false
-    },
-  ];
+  products: Product[] = [];
 
-  constructor() { }
+  constructor(
+    private logger: LoggerService,
+    private productsService: ProductsService
+  ) { }
 
-  ngOnInit() { }
-
-  onProductCreated(product: Product) {
-    this.products.unshift(product);
-    console.log('productCreated event handled.');
+  ngOnInit() {
+    this.products = this.productsService.getProducts();
   }
 }

@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductFormComponent } from './product-form/product-form.component';
+import { LoggerService } from './services/logger.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { ProductFormComponent } from './product-form/product-form.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [LoggerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
