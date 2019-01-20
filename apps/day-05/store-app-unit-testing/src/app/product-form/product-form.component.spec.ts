@@ -8,7 +8,7 @@ import { Observable } from 'rxjs/Observable';
 import { ProductFormComponent } from './product-form.component';
 import { ProductsService } from '../services/products.service';
 
-xdescribe('ProductFormComponent', () => {
+describe('ProductFormComponent', () => {
   let fixture: ComponentFixture<ProductFormComponent>;
   let component: ProductFormComponent;
   let service: ProductsService;
@@ -30,7 +30,7 @@ xdescribe('ProductFormComponent', () => {
     // service = fixture.debugElement.injector.get(ProductsService);
   });
 
-  it('should show product details for a particular product', async(() => {
+  xit('should show product details for a particular product', async(() => {
     const product = {
       id: 1,
       name: 'iPhone 8',

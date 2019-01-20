@@ -38,7 +38,7 @@ describe('ProductDetailComponent', () => {
     component = fixture.componentInstance;
   });
 
-  xit('should show product details for a particular product', () => {
+  it('should show product details for a particular product', () => {
     component.product = {
       id: 1,
       name: 'iPhone 8',

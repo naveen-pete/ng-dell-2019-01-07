@@ -27,3 +27,8 @@ Git Setup
 
 Angular 2 / 4 / 5 not working in IE11
 - https://stackoverflow.com/questions/35140718/angular-2-4-5-not-working-in-ie11
+
+Testing HttpClient
+- https://alligator.io/angular/testing-httpclient/
+- https://medium.com/netscape/testing-with-the-angular-httpclient-api-648203820712
+- https://www.ng-conf.org/2019/angulars-httpclient-testing-depth/

@@ -1,6 +1,6 @@
 import { CityService } from './city.service';
 
-xdescribe('CityService', () => {
+describe('CityService', () => {
   let cityService: CityService;
 
   // runs before every test

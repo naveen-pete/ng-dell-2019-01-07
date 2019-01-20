@@ -15,7 +15,7 @@ export class ProductsComponent implements OnInit {
 
   constructor(private service: ProductsService) {}
 
-  xngOnInit() {
+  ngOnInit() {
     this.service.getProducts().subscribe(
       (products: Product[]) => {
         console.log('Success! Get Products Successful! (via Observable)');
@@ -31,7 +31,7 @@ export class ProductsComponent implements OnInit {
     );
   }
 
-  ngOnInit() {
+  xngOnInit() {
     this.service
       .getProductsPromise()
       .then((products: Product[]) => {

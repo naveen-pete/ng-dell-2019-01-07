@@ -16,7 +16,7 @@ describe('ProductsComponent', () => {
     component = new ProductsComponent(service);
   });
 
-  xit('should set products property with the items returned from the server', () => {
+  it('should set products property with the items returned from the server', () => {
     // Arrange - Setup
     const products: Product[] = [
       {
